@@ -1,0 +1,31 @@
+/* Personalización adicional */
+:root {
+            --orange-primary: #F97316; /* Naranja Tailwind */
+            --orange-dark: #EA580C;
+        }
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+.bg-orange-gradient {
+            background: linear-gradient(135deg, #F97316, #FB923C);
+        }
+		
+.text-orange-500 { color: var(--orange-primary); }
+.hover\:text-orange-500:hover { color: var(--orange-primary); }
+.bg-orange-500 { background-color: var(--orange-primary); }
+
+/* Efecto de gradiente animado para el hero */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.bg-gradient-animated {
+    background: linear-gradient(135deg, #F97316, #FB923C, #F97316);
+    background-size: 200% 200%;
+    animation: gradientBG 8s ease infinite;
+}

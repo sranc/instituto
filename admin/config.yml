@@ -1,0 +1,18 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/uploads"  # Ruta donde se guardan imágenes
+public_folder: "/uploads"       # Ruta pública para acceder a ellas
+
+collections:
+  - name: "cursos"
+    label: "Cursos"
+    file: "data/cursos.json"       # Cambia esto si prefieres archivos individuales
+    create: true
+    fields:
+      - { name: "titulo", label: "Título", widget: "string" }
+      - { name: "descripcion", label: "Descripción", widget: "text" }
+      - { name: "imagen", label: "Imagen", widget: "image" }
+      - { name: "duracion", label: "Duración", widget: "string" }
+      - { name: "activo", label: "¿Activo?", widget: "boolean", default: true }
