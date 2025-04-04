@@ -1,0 +1,33 @@
+name: Actualizar índice de cursos  # Nombre del workflow
+
+on:
+  push:
+    paths:
+      - 'data/cursos/**'  # Se activa solo si cambian archivos en data/cursos/
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest  # Sistema operativo para el job
+
+    steps:
+      # Paso 1: Descarga el repositorio
+      - uses: actions/checkout@v4
+
+      # Paso 2: Instala jq (para procesar JSON)
+      - name: Instalar jq
+        run: sudo apt-get install -y jq
+
+      # Paso 3: Genera el nuevo índice
+      - name: Actualizar cursos-index.json
+        run: |
+          cd data/cursos/
+          ls *.json | jq -R -n '[inputs | select(length>0)]' > ../cursos-index.json
+
+      # Paso 4: Sube los cambios al repositorio
+      - name: Commit y Push
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add ../cursos-index.json
+          git commit -m "[Automático] Actualizado índice de cursos"
+          git push

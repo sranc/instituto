@@ -2,14 +2,15 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "static/uploads"  # Ruta donde se guardan imágenes
-public_folder: "/uploads"       # Ruta pública para acceder a ellas
+media_folder: "static/uploads"
+public_folder: "/uploads"
 
 collections:
   - name: "cursos"
     label: "Cursos"
-    file: "data/cursos.json"       # Cambia esto si prefieres archivos individuales
+    folder: "data/cursos"  # Cambia 'file' por 'folder'
     create: true
+    slug: "{{slug}}"      # Genera nombres de archivo automáticos
     fields:
       - { name: "titulo", label: "Título", widget: "string" }
       - { name: "descripcion", label: "Descripción", widget: "text" }

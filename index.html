@@ -221,39 +221,50 @@
         });
 
         // Cargar cursos desde JSON
-        fetch('data/cursos.json')
+        fetch('data/cursos-index.json')
     .then(response => response.json())
-    .then(cursos => {
+    .then(fileNames => {
         const container = document.getElementById('cursos-container');
-        // Filtrar solo cursos activos
-        const cursosActivos = cursos.filter(curso => curso.activo === true);
+        container.innerHTML = ''; // Limpiar contenedor
 
-        if (cursosActivos.length === 0) {
-            container.innerHTML = `
-                <div class="col-span-3 text-center py-12">
-                    <p class="text-gray-500">Próximamente nuevos cursos. ¡Síguenos para updates!</p>
-                </div>
-            `;
-        } else {
-            cursosActivos.forEach((curso, index) => {
-                container.innerHTML += `
-                    <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:scale-105 transition-transform" 
-                         data-aos="flip-up" data-aos-delay="${index * 150}">
-                        <div class="bg-orange-100 p-4 rounded-lg mb-4">
-                            <img src="${curso.imagen}" alt="${curso.titulo}" class="rounded-lg w-full h-48 object-cover">
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">${curso.titulo}</h3>
-                        <p class="text-gray-600 mb-2">${curso.descripcion}</p>
-                        <p class="text-sm text-orange-500">Duración: ${curso.duracion}</p>
-                        <!-- Se eliminó el enlace "Más información" -->
+        // Cargar todos los cursos en paralelo
+        Promise.all(
+            fileNames.map(file => 
+                fetch(`data/cursos/${file}`)
+                    .then(res => res.json())
+                    .catch(() => null) // Ignorar errores
+            )
+        )
+        .then(cursos => {
+            // Filtrar cursos activos y válidos
+            const cursosActivos = cursos.filter(curso => curso?.activo === true);
+
+            if (cursosActivos.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-3 text-center py-12">
+                        <p class="text-gray-500">Próximamente nuevos cursos. ¡Síguenos para updates!</p>
                     </div>
                 `;
-            });
-        }
+            } else {
+                cursosActivos.forEach((curso, index) => {
+                    container.innerHTML += `
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:scale-105 transition-transform" 
+                             data-aos="flip-up" data-aos-delay="${index * 150}">
+                            <div class="bg-orange-100 p-4 rounded-lg mb-4">
+                                <img src="${curso.imagen}" alt="${curso.titulo}" class="rounded-lg w-full h-48 object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">${curso.titulo}</h3>
+                            <p class="text-gray-600 mb-2">${curso.descripcion}</p>
+                            <p class="text-sm text-orange-500">Duración: ${curso.duracion}</p>
+                        </div>
+                    `;
+                });
+            }
+        });
     })
     .catch(error => {
-        console.error("Error cargando cursos:", error);
-        container.innerHTML = `
+        console.error("Error:", error);
+        document.getElementById('cursos-container').innerHTML = `
             <div class="col-span-3 text-center py-12">
                 <p class="text-red-500">Error al cargar los cursos. Por favor, recarga la página.</p>
             </div>

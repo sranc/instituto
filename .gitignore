@@ -1,0 +1,13 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Dependencias y entornos
+node_modules/
+.env
+
+# Netlify CMS
+/static/uploads/
+*.log
+
+data/cursos-index.json
