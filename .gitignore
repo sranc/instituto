@@ -10,3 +10,4 @@ node_modules/
 /static/uploads/
 *.log
 
+data/cursos-index.json
