@@ -1,0 +1,16 @@
+[
+  {
+    "titulo": "Primeros auxilios",
+    "descripcion": "Aprende a guiar equipos con confianza y resultados.",
+    "imagen": "/uploads/primeros_auxilios.jpeg",
+    "duracion": "2 semanas",
+    "activo": true
+  },
+  {
+    "titulo": "Comunicación Asertiva",
+    "descripcion": "Expresa tus ideas con claridad y seguridad.",
+    "imagen": "https://via.placeholder.com/300x200/F97316/FFFFFF?text=Comunicación",
+    "duracion": "1 semana",
+    "activo": true
+  }
+]
