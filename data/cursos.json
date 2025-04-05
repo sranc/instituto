@@ -2,7 +2,7 @@
   {
     "titulo": "Primeros auxilios",
     "descripcion": "Aprende a guiar equipos con confianza y resultados.",
-    "imagen": "/uploads/primeros_auxilios.jpeg",
+    "imagen": "/static/uploads/primeros_auxilios.jpeg",
     "duracion": "2 semanas",
     "activo": true
   },
