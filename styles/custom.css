@@ -8,6 +8,13 @@
   --stone-dark: #292524;
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh; /* O usa -webkit-fill-available para móviles */
+}
+
 .bg-orange-gradient {
   background: linear-gradient(
     135deg,
