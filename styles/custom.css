@@ -1,31 +1,119 @@
-/* Personalización adicional */
 :root {
-            --orange-primary: #F97316; /* Naranja Tailwind */
-            --orange-dark: #EA580C;
-        }
+  --orange-primary: #f97316;
+  --orange-dark: #ea580c;
+  --orange-light: #fdba74;
+  --teal-primary: #0d9488;
+  --teal-light: #5eead4;
+  --stone-light: #f5f5f4;
+  --stone-dark: #292524;
+}
+
+.bg-orange-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--orange-primary),
+    var(--orange-light)
+  );
+}
+
+.dark .bg-orange-gradient {
+  background: linear-gradient(135deg, var(--orange-light), var(--orange-dark));
+}
+
 .hover-scale {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s;
 }
 .hover-scale:hover {
-    transform: scale(1.05);
-}
-.bg-orange-gradient {
-            background: linear-gradient(135deg, #F97316, #FB923C);
-        }
-		
-.text-orange-500 { color: var(--orange-primary); }
-.hover\:text-orange-500:hover { color: var(--orange-primary); }
-.bg-orange-500 { background-color: var(--orange-primary); }
-
-/* Efecto de gradiente animado para el hero */
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  transform: scale(1.03);
 }
 
-.bg-gradient-animated {
-    background: linear-gradient(135deg, #F97316, #FB923C, #F97316);
-    background-size: 200% 200%;
-    animation: gradientBG 8s ease infinite;
+/* Estilos para el interruptor de tema */
+.theme-toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.theme-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.theme-slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.transition-theme {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Asegurar que las imágenes también tengan transición */
+.dark img:not(.no-filter) {
+  filter: brightness(0.9) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+
+input:checked + .theme-slider {
+  background-color: var(--orange-primary);
+}
+
+input:checked + .theme-slider:before {
+  transform: translateX(30px);
+}
+
+.theme-slider i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+}
+
+.fa-sun {
+  left: 6px;
+  color: #ffd700;
+}
+
+.fa-moon {
+  right: 6px;
+  color: #2f4f4f;
+}
+
+/* Ajustes para imágenes en modo oscuro */
+.dark img:not(.no-filter) {
+  filter: brightness(0.9) contrast(1.1);
+}
+
+/* Transiciones suaves */
+.transition-theme {
+  transition: background-color 0.3s ease, color 0.2s ease;
+}
+.card-light {
+  background-color: #f5f5f4; /* stone-50 */
+}
+
+.dark .card-dark {
+  background-color: #3a3b3e; /* Color personalizado para modo oscuro */
 }

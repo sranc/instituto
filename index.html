@@ -1,266 +1,577 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="es" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Meta tags SEO -->
+    <meta
+      name="description"
+      content="Orange Training - Cursos especializados en tecnología y desarrollo profesional. Capacitaciones prácticas para potenciar tu carrera."
+    />
+    <meta
+      name="keywords"
+      content="cursos, capacitación, formación profesional, desarrollo de habilidades, orange training"
+    />
+    <meta name="author" content="Orange Training" />
+
+    <!-- Open Graph / Facebook (para redes sociales) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.tudominio.com/" />
+    <meta
+      property="og:title"
+      content="Orange Training | Cursos Especializados"
+    />
+    <meta
+      property="og:description"
+      content="Transforma tu futuro con nuestros cursos intensivos en tecnología y desarrollo profesional."
+    />
+    <meta
+      property="og:image"
+      content="https://www.tudominio.com/images/logo-social.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.tudominio.com/" />
+    <meta
+      property="twitter:title"
+      content="Orange Training | Cursos Especializados"
+    />
+    <meta
+      property="twitter:description"
+      content="Transforma tu futuro con nuestros cursos intensivos en tecnología y desarrollo profesional."
+    />
+    <meta
+      property="twitter:image"
+      content="https://www.tudominio.com/images/logo-social.jpg"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.tudominio.com/" />
     <title>Orange Training | Cursos Especializados</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
-    <link rel="stylesheet" href="styles/custom.css">
-</head>
-<body class="font-sans bg-gray-50">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              warm: {
+                light: "#FFF4E6",
+                DEFAULT: "#FFA726",
+                dark: "#FB8C00",
+              },
+              dark: {
+                bg: "#212121",
+                card: "#2C2C2C",
+                text: "#E0E0E0",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles/custom.css" />
+  </head>
+  <body
+    class="font-sans bg-stone-50 dark:bg-stone-900 text-stone-800 dark:text-stone-100 transition-colors duration-300"
+  >
     <!-- Navbar -->
-    <nav class="fixed w-full bg-white shadow-md z-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <!-- Logo Placeholder -->
-                    <a href="#" class="flex items-center">
-					     <img 
-						  src="/images/logo1.jpg" 
-						  alt="Logo Orange Training" 
-						  class="h-10 mr-2"  /* Ajusta altura según necesidad */
-						>
-                        <div class="bg-orange-500 text-white p-2 rounded-lg font-bold text-xl">ORANGE TRAINING</div>
-                    </a>
-                </div>
-                <!-- Menú Desktop -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#inicio" class="text-gray-700 hover:text-orange-500">Inicio</a>
-                    <a href="#cursos" class="text-gray-700 hover:text-orange-500">Cursos</a>
-                    <a href="#nosotros" class="text-gray-700 hover:text-orange-500">Nosotros</a>
-                    <a href="#contacto" class="text-gray-700 hover:text-orange-500">Contacto</a>
-                </div>
-                <!-- Menú Mobile -->
-                <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="text-gray-700 focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                </div>
+    <nav
+      class="fixed w-full bg-white dark:bg-stone-800 shadow-md z-50 transition-colors duration-300"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center">
+              <img
+                src="/images/logo1.jpg"
+                alt="Logo Orange Training"
+                class="h-10 mr-2"
+              />
+              <div
+                class="bg-orange-500 text-white p-2 rounded-lg font-bold text-xl"
+              >
+                ORANGE TRAINING
+              </div>
+            </a>
+          </div>
+          <div class="flex items-center space-x-4">
+            <!-- Menú Desktop -->
+            <div class="hidden md:flex items-center space-x-8">
+              <a
+                href="#inicio"
+                class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 transition-theme"
+                >Inicio</a
+              >
+              <a
+                href="#cursos"
+                class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 transition-theme"
+                >Cursos</a
+              >
+              <a
+                href="#nosotros"
+                class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 transition-theme"
+                >Nosotros</a
+              >
+              <a
+                href="#contacto"
+                class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 transition-theme"
+                >Contacto</a
+              >
+
+              <!-- Interruptor de tema -->
+              <label class="theme-toggle">
+                <input type="checkbox" id="theme-toggle" />
+                <span class="theme-slider">
+                  <i class="fas fa-sun"></i>
+                  <i class="fas fa-moon"></i>
+                </span>
+              </label>
             </div>
-        </div>
-        <!-- Menú Mobile Desplegable -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#inicio" class="block px-3 py-2 text-gray-700 hover:text-orange-500">Inicio</a>
-                <a href="#cursos" class="block px-3 py-2 text-gray-700 hover:text-orange-500">Cursos</a>
-                <a href="#nosotros" class="block px-3 py-2 text-gray-700 hover:text-orange-500">Nosotros</a>
-                <a href="#contacto" class="block px-3 py-2 text-gray-700 hover:text-orange-500">Contacto</a>
+
+            <!-- Menú Mobile -->
+            <div class="md:hidden flex items-center space-x-4">
+              <label class="theme-toggle">
+                <input type="checkbox" id="theme-toggle-mobile" />
+                <span class="theme-slider">
+                  <i class="fas fa-sun"></i>
+                  <i class="fas fa-moon"></i>
+                </span>
+              </label>
+              <button
+                id="menu-btn"
+                class="text-gray-700 dark:text-gray-300 focus:outline-none"
+              >
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
             </div>
+          </div>
         </div>
+      </div>
+      <!-- Menú Mobile Desplegable -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-white dark:bg-stone-800 shadow-lg transition-theme"
+      >
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <a
+            href="#inicio"
+            class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition-theme"
+            >Inicio</a
+          >
+          <a
+            href="#cursos"
+            class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition-theme"
+            >Cursos</a
+          >
+          <a
+            href="#nosotros"
+            class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition-theme"
+            >Nosotros</a
+          >
+          <a
+            href="#contacto"
+            class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition-theme"
+            >Contacto</a
+          >
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="pt-24 pb-12 md:pt-32 md:pb-20 bg-orange-gradient text-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="md:flex items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Transforma tu futuro con <span class="underline">Orange Training</span></h1>
-                    <p class="text-xl mb-6">Cursos intensivos diseñados para potenciar tus habilidades profesionales y personales.</p>
-                    <a href="#cursos" class="bg-white text-orange-500 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition">Ver Cursos</a>
-                </div>
-                <div class="md:w-1/2" data-aos="fade-left">
-                    <img src="/images/logo.jpg" alt="Estudiantes" class="rounded-lg shadow-xl hover:scale-105 transition-transform">
-                </div>
-            </div>
+    <section
+      id="inicio"
+      role="region"
+      aria-label="Presentación de Orange Training"
+      class="pt-24 pb-12 md:pt-32 md:pb-20 bg-orange-gradient text-white"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center">
+          <!-- IMAGEN (primera en móvil) -->
+          <div
+            class="w-full md:w-1/2 md:order-2 mb-8 md:mb-0"
+            data-aos="fade-left"
+          >
+            <img
+              src="/images/logo.jpg"
+              alt="Estudiantes"
+              class="rounded-lg shadow-xl hover:scale-105 transition-transform mx-auto max-w-md md:max-w-none"
+            />
+          </div>
+
+          <!-- TEXTO (segundo en móvil) -->
+          <div class="w-full md:w-1/2 md:order-1" data-aos="fade-right">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+              Transforma tu futuro con
+              <span class="underline">Orange Training</span>
+            </h1>
+            <p class="text-xl mb-6">
+              Cursos intensivos diseñados para potenciar tus habilidades
+              profesionales y personales.
+            </p>
+            <a
+              href="#cursos"
+              class="bg-white text-orange-500 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-theme"
+              >Ver Cursos</a
+            >
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Cursos Section -->
-    <section id="cursos" class="py-16 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-down">Nuestros Cursos</h2>
-            <div id="cursos-container" class="grid md:grid-cols-3 gap-8">
-                <!-- Los cursos se cargarán aquí dinámicamente desde cursos.json -->
-            </div>
+    <section
+      id="cursos"
+      class="py-16 bg-white dark:bg-stone-800 transition-theme"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl font-bold text-center mb-12 dark:text-white"
+          data-aos="fade-down"
+        >
+          Nuestros Cursos
+        </h2>
+        <div id="cursos-container" class="grid md:grid-cols-3 gap-8">
+          <!-- Los cursos se cargarán aquí dinámicamente desde cursos.json -->
         </div>
+      </div>
     </section>
 
     <!-- Quiénes Somos -->
-    <section id="nosotros" class="py-16 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="md:flex items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
-                    <img src="https://via.placeholder.com/500x350/F97316/FFFFFF?text=Equipo+Orange" alt="Equipo" class="rounded-lg shadow-xl hover:scale-105 transition-transform">
-                </div>
-                <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
-                    <h2 class="text-3xl font-bold mb-6">Quiénes Somos</h2>
-                    <p class="text-gray-700 mb-4">Somos un equipo de profesionales apasionados por la educación práctica y accesible.</p>
-                    <p class="text-gray-700 mb-6">Nuestra misión es empoderarte con habilidades que marquen la diferencia en tu vida profesional y personal.</p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <span class="bg-orange-500 rounded-full p-1 mr-2">
-                                <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                            </span>
-                            <span>Cursos 100% prácticos</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="bg-orange-500 rounded-full p-1 mr-2">
-                                <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                            </span>
-                            <span>Instructores especializados</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <section
+      id="nosotros"
+      class="py-16 bg-gray-50 dark:bg-stone-700 transition-theme"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="md:flex items-center">
+          <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
+            <img
+              src="https://via.placeholder.com/500x350/F97316/FFFFFF?text=Equipo+Orange"
+              alt="Equipo"
+              class="rounded-lg shadow-xl hover:scale-105 transition-transform"
+            />
+          </div>
+          <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+            <h2 class="text-3xl font-bold mb-6 dark:text-white">
+              Quiénes Somos
+            </h2>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
+              Somos un equipo de profesionales apasionados por la educación
+              práctica y accesible.
+            </p>
+            <p class="text-gray-700 dark:text-gray-300 mb-6">
+              Nuestra misión es empoderarte con habilidades que marquen la
+              diferencia en tu vida profesional y personal.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-center">
+                <span class="bg-orange-500 rounded-full p-1 mr-2">
+                  <svg
+                    class="h-4 w-4 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </span>
+                <span class="dark:text-gray-300">Cursos 100% prácticos</span>
+              </li>
+              <li class="flex items-center">
+                <span class="bg-orange-500 rounded-full p-1 mr-2">
+                  <svg
+                    class="h-4 w-4 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </span>
+                <span class="dark:text-gray-300"
+                  >Instructores especializados</span
+                >
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Contacto -->
-    <section id="contacto" class="py-16 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-down">Contáctanos</h2>
-            <div class="md:flex">
-                <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
-                    <form class="space-y-6" action="https://formsubmit.co/tu-email@ejemplo.com" method="POST">
-                        <input type="hidden" name="_subject" value="Nuevo mensaje desde Orange Training">
-                        <div>
-                            <label for="name" class="block text-gray-700 mb-2">Nombre</label>
-                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-gray-700 mb-2">Email</label>
-                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-gray-700 mb-2">Mensaje</label>
-                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
-                        </div>
-                        <button type="submit" class="bg-orange-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-600 transition">Enviar Mensaje</button>
-                    </form>
-                </div>
-                <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
-                    <h3 class="text-xl font-bold mb-4">Información de contacto</h3>
-                    <p class="text-gray-700 mb-6">Estamos aquí para ayudarte. Escríbenos o síguenos en redes sociales.</p>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <svg class="h-6 w-6 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                            <span>contacto@orangetraining.com</span>
-                        </div>
-                        <div class="flex items-center">
-                            <svg class="h-6 w-6 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                            </svg>
-                            <span>+51 123 456 789</span>
-                        </div>
-                    </div>
-                    <div class="mt-8">
-                        <h4 class="font-bold mb-4">Síguenos</h4>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-orange-500 hover:text-orange-700">
-                                <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="text-orange-500 hover:text-orange-700">
-                                <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <section
+      id="contacto"
+      class="py-16 bg-white dark:bg-stone-800 transition-theme"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl font-bold text-center mb-12 dark:text-white"
+          data-aos="fade-down"
+        >
+          Contáctanos
+        </h2>
+        <div class="md:flex">
+          <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
+            <form
+              class="space-y-6"
+              action="https://formsubmit.co/tu-email@ejemplo.com"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="_subject"
+                value="Nuevo mensaje desde Orange Training"
+              />
+              <div>
+                <label
+                  for="name"
+                  class="block text-gray-700 dark:text-gray-300 mb-2"
+                  >Nombre</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 dark:border-stone-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 dark:bg-stone-700 dark:text-white transition-theme"
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block text-gray-700 dark:text-gray-300 mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 dark:border-stone-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 dark:bg-stone-700 dark:text-white transition-theme"
+                />
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="block text-gray-700 dark:text-gray-300 mb-2"
+                  >Mensaje</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 dark:border-stone-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 dark:bg-stone-700 dark:text-white transition-theme"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-bold transition-theme"
+              >
+                Enviar Mensaje
+              </button>
+            </form>
+          </div>
+          <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+            <h3 class="text-xl font-bold mb-4 dark:text-white">
+              Información de contacto
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-6">
+              Estamos aquí para ayudarte. Escríbenos o síguenos en redes
+              sociales.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <svg
+                  class="h-6 w-6 text-orange-500 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                <span class="dark:text-gray-300"
+                  >contacto@orangetraining.com</span
+                >
+              </div>
+              <div class="flex items-center">
+                <svg
+                  class="h-6 w-6 text-orange-500 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                <span class="dark:text-gray-300">+51 123 456 789</span>
+              </div>
             </div>
+            <div class="mt-8">
+              <h4 class="font-bold mb-4 dark:text-white">Síguenos</h4>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="text-orange-500 hover:text-orange-700 dark:hover:text-orange-400 transition-theme"
+                >
+                  <svg
+                    class="h-8 w-8"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  class="text-orange-500 hover:text-orange-700 dark:hover:text-orange-400 transition-theme"
+                >
+                  <svg
+                    class="h-8 w-8"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="md:flex md:justify-between">
-                <div class="mb-6 md:mb-0">
-                    <a href="#" class="flex items-center">
-                        <div class="bg-orange-500 text-white p-2 rounded-lg font-bold text-xl">ORANGE TRAINING</div>
-                    </a>
-                    <p class="mt-2 text-gray-400">Capacitación que transforma.</p>
-                </div>
-                <div class="grid grid-cols-2 gap-8 sm:grid-cols-3">
-                    <div>
-                        <h3 class="text-sm font-semibold uppercase tracking-wider">Enlaces</h3>
-                        <ul class="mt-4 space-y-2">
-                            <li><a href="#inicio" class="text-gray-400 hover:text-orange-500">Inicio</a></li>
-                            <li><a href="#cursos" class="text-gray-400 hover:text-orange-500">Cursos</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-semibold uppercase tracking-wider">Legal</h3>
-                        <ul class="mt-4 space-y-2">
-                            <li><a href="#" class="text-gray-400 hover:text-orange-500">Política de privacidad</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-orange-500">Términos y condiciones</a></li>
-                        </ul>
-                    </div>
-                </div>
+    <footer
+      class="bg-gray-800 dark:bg-stone-900 text-white py-8 transition-theme"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="md:flex md:justify-between">
+          <div class="mb-6 md:mb-0">
+            <a href="#" class="flex items-center">
+              <img
+                src="/images/logo1.jpg"
+                alt="Logo Orange Training"
+                class="h-10 mr-2"
+              />
+              <div
+                class="bg-orange-500 text-white p-2 rounded-lg font-bold text-xl"
+              >
+                ORANGE TRAINING
+              </div>
+            </a>
+            <p class="mt-2 text-gray-400">Capacitación que transforma.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-8 sm:grid-cols-3">
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-wider">
+                Enlaces
+              </h3>
+              <ul class="mt-4 space-y-2">
+                <li>
+                  <a
+                    href="#inicio"
+                    class="text-gray-400 hover:text-orange-500 transition-theme"
+                    >Inicio</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#cursos"
+                    class="text-gray-400 hover:text-orange-500 transition-theme"
+                    >Cursos</a
+                  >
+                </li>
+              </ul>
             </div>
-            <div class="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
-                <p class="text-center md:text-left text-gray-400">© 2023 Orange Training. Todos los derechos reservados.</p>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-wider">
+                Legal
+              </h3>
+              <ul class="mt-4 space-y-2">
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-orange-500 transition-theme"
+                    >Política de privacidad</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-orange-500 transition-theme"
+                    >Términos y condiciones</a
+                  >
+                </li>
+              </ul>
             </div>
+          </div>
         </div>
+        <div
+          class="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between"
+        >
+          <p class="text-center md:text-left text-gray-400">
+            © 2023 Orange Training. Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Inicializar AOS (Animaciones)
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-
-        // Cargar cursos desde JSON
-        fetch('data/cursos.json')
-      .then(response => response.json())
-      .then(cursos => {
-        const container = document.getElementById('cursos-container');
-        const cursosActivos = cursos.filter(curso => curso.activo === true);
-
-        if (cursosActivos.length === 0) {
-          container.innerHTML = `
-            <div class="col-span-3 text-center py-12">
-              <p class="text-gray-500">Próximamente nuevos cursos.</p>
-            </div>`;
-        } else {
-          cursosActivos.forEach((curso, index) => {
-            container.innerHTML += `
-              <div class="bg-gray-50 p-6 rounded-xl shadow-md hover-scale" 
-                   data-aos="flip-up" data-aos-delay="${index * 150}">
-                <div class="bg-orange-500 bg-opacity-75 p-4 rounded-lg mb-4 overflow-hidden">
-                  <img src="${curso.imagen}" alt="${curso.titulo}" 
-                       class="rounded-lg w-full h-full object-cover object-center">
-                </div>
-                <h3 class="text-xl font-bold mb-2">${curso.titulo}</h3>
-                <p class="text-gray-600 mb-2">${curso.descripcion}</p>
-                <p class="text-sm text-orange-500">Duración: ${curso.duracion}</p>
-              </div>`;
-          });
-        }
-        AOS.init(); // Inicializar animaciones
-      })
-      .catch(error => {
-        console.error("Error:", error);
-        document.getElementById('cursos-container').innerHTML = `
-          <div class="col-span-3 text-center py-12">
-            <p class="text-red-500">Error al cargar los cursos.</p>
-          </div>`;
-      });
-    </script>
-</body>
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>
